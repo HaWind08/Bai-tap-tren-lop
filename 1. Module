@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+long tinhGT(int k)
+{
+	long GT = 1;
+	for (int i = 1; i <= k; i++)
+	{
+		GT *= i;
+	}
+	return GT;
+}
+double tinhC(int n, int m)
+{
+	long TuSo = tinhGT(n) + tinhGT(m);
+	long MauSo = tinhGT(n + m);
+	double C = (double)TuSo / MauSo;
+	return C;
+}
+
+int main()
+{
+	int n,m;
+	cout << "Nhap n: ";
+	cin >> n;
+	cout << "Nhap m: ";
+	cin >> m;
+	cout << "Ket qua la: " << tinhC(n,m) << endl;
+	return 0;
+}
