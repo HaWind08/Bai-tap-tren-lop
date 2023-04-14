@@ -1,0 +1,29 @@
+#include<iostream>
+
+using namespace std;
+
+float Nhap()
+{
+	float bankinh;
+	do
+	{
+		cout << "Nhap ban kinh: "; cin >> bankinh;
+	} while (bankinh < 1);
+	return bankinh;
+}
+
+void tinhtoan(float bankinh, float &chuvi, float &dientich)
+{
+	chuvi = 2*3.14*bankinh;
+	dientich = 3.14*bankinh*bankinh;
+}
+
+int main()
+{
+	float bankinh,chuvi,dientich;
+	bankinh = Nhap();
+	tinhtoan(bankinh,chuvi,dientich);
+	cout << "Chu vi cua hinh tron la: " << chuvi << endl;
+	cout << "Dien tich cua hinh tron la: " << dientich;
+	return 0;
+}
