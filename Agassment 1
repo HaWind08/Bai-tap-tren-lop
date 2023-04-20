@@ -1,0 +1,64 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void NhapX(double &x)
+{
+	cout << "Nhap dau vao x: ";
+	cin >> x;
+}
+
+void NhapN(int &n)
+{
+	cout << "Nhap dau vao: ";
+	cin >> n;
+}
+
+void tanggiatri(int &n)
+{
+	n++;
+}
+
+void giamgiatri(int &n)
+{
+	n--;
+}
+
+void tinhP(double x, int n)
+{
+	double P = 0;
+	for (int i = 2; i <= n; i++)
+	{
+		P = P + (1.0*pow(x, i) / (1.0*pow(3, i - 1)));
+	}
+	P += 2018 * pow(x, n);
+	cout << "Gia tri cua P la: " << P << endl;
+}
+
+int TongSoChan(int n)
+{
+	int SoChan = 0;
+	for (int i = 1; i <= n; i++)
+	{
+		if (i % 2 == 0 && i > 5)
+		{
+			SoChan += i;
+		}
+	}
+	cout << SoChan;
+}
+
+int main()
+{
+	double x;
+	int n, m;
+	NhapX(x);
+	NhapN(n);
+	NhapN(m);
+	tanggiatri(n);
+	tanggiatri(m);
+	tinhP(x, n);
+	int tong = TongSoChan(m) - TongSoChan(n - 1);
+	cout << "Tong cac so chan lon hon 5 trong doan [" << n << ", " << m << "] la: " << tong << endl;
+	return 0;
+}
